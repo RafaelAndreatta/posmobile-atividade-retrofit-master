@@ -85,7 +85,7 @@ public class PrincipalActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Previsoes> call, retrofit2.Response<Previsoes> response) {
                 List<Previsao> p = response.body().previsaoList;
-                atualizaPrevisoes(p);
+                atualizaPrevisoes(p);//chama a função atualiza previções
 
 
             }
