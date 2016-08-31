@@ -66,7 +66,7 @@ public class PrincipalActivity extends AppCompatActivity {
         retrofit = new Retrofit.Builder()
 
                 //todo Inclua a url base no construtor do Retrofit
-                .baseUrl(Utils.URL_BASE)
+                .baseUrl(Utils.URL_BASE)//pega url base da classe utils
 
                 .addConverterFactory(GsonConverterFactory.create(gsonBldr.create()))
                 .build();
@@ -84,14 +84,16 @@ public class PrincipalActivity extends AppCompatActivity {
         callbackPrevisoes.enqueue(new Callback<Previsoes>() {
             @Override
             public void onResponse(Call<Previsoes> call, retrofit2.Response<Previsoes> response) {
-                List<Previsao> p = response.body().previsaoList;
-                atualizaPrevisoes(p);//chama a função atualiza previções
+
+                atualizaPrevisoes(response.body().previsaoList);//chama a função atualiza previções
 
 
             }
 
             @Override
             public void onFailure(Call<Previsoes> call, Throwable t) {
+
+                
 
             }
         });
