@@ -93,7 +93,7 @@ public class PrincipalActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<Previsoes> call, Throwable t) {
 
-                
+
 
             }
         });
